@@ -47,36 +47,4 @@ button.refresh{
 button.refresh:hover{
     box-shadow: inset 10px 4pc 10pc #252525, inset 5px 5px 18px #4a4a4a;
 }
-.search-form {
-  display: flex; /* Arranges input and button in a row */
-  align-items: center; /* Vertically aligns items */
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 5px;
-  background-color: #f9f9f9;
-}
 
-.search-input {
-  flex-grow: 1; /* Allows the input field to take up available space */
-  border: none;
-  padding: 8px 10px;
-  font-size: 16px;
-  outline: none; /* Removes outline on focus */
-  background-color: transparent;
-}
-
-.search-button {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 3px;
-  padding: 8px 12px;
-  cursor: pointer;
-  font-size: 7px;
-  margin-left: 5px;
-  border-radius: 5px;
-}
-
-.search-button:hover {
-  background-color: #0056b3;
-}
