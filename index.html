@@ -22,34 +22,24 @@
         </div>
     </div>
 
-    <script>
+   <script>
     function reloadPage() {
-        fetchWeather();
+        window.location.reload();
     }
 
     const apiKey = "57aa0c18c065af4aa5b27f5ebe71998a"; 
-    
-    const link = "https://api.openweathermap.org/data/2.5/weather?q=haridwar&units=metric&appid=" + apiKey;
+    const link = "https://api.openweathermap.org/data/2.5/weather?q=haridwar&appid=" + apiKey;
 
     function fetchWeather() {
-        
-        document.getElementById('location').innerHTML = "Updating...";
-
         var request = new XMLHttpRequest();
         request.open('GET', link, true);
         request.onload = function() {
             if (request.status >= 200 && request.status < 400) {
                 var obj = JSON.parse(this.response);
-                
                 document.getElementById('Weather').innerHTML = obj.weather[0].description;
                 document.getElementById('location').innerHTML = obj.name;
-                
-               
-                document.getElementById('temp').innerHTML = Math.round(obj.main.temp);
-                
+                document.getElementById('temp').innerHTML = Math.round(obj.main.temp - 273.15);
                 document.getElementById('icon').src = "https://openweathermap.org/img/w/" + obj.weather[0].icon + ".png";
-            } else {
-                document.getElementById('location').innerHTML = "Error fetching data";
             }
         };
         request.send();
